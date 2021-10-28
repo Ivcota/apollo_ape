@@ -12,6 +12,7 @@ async function startApolloServer() {
         musicApi: new MusicAPI(),
       };
     },
+    introspection: true,
   });
   const PORT = 5000;
 

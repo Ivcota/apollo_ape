@@ -7,17 +7,17 @@ export interface IContext {
 
 export const typeDefs = gql`
   type Photo {
-    albumId: Int!
     id: ID!
     title: String!
     url: String!
+    albumId: Int!
     thumbnailUrl: String!
   }
 
   type Album {
-    userId: Int!
     id: ID!
     title: String!
+    userId: Int!
     photos: [Photo!]!
   }
 
