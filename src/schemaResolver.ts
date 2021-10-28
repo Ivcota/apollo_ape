@@ -24,6 +24,7 @@ export const typeDefs = gql`
   type Query {
     _root: String!
     allAlbums: [Album!]!
+    singleAlbum(id: Int!): Album!
   }
 `;
 
@@ -39,6 +40,13 @@ export const resolvers = {
       info: any
     ) => {
       return dataSources.musicApi.getAlbums();
+    },
+    singleAlbum: (
+      _: any,
+      { id }: any,
+      { dataSources }: { dataSources: IContext }
+    ) => {
+      return dataSources.musicApi.getAlbum(id);
     },
   },
   Album: {
